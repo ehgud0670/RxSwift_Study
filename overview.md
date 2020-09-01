@@ -10,7 +10,8 @@
 ## 옵저버 패턴은 옳습니다. 
 
 <img width="869" alt="reactive-x" src="https://user-images.githubusercontent.com/38216027/91788990-903def80-ec48-11ea-87be-7d94130dd34f.png">
-
+<br>=> 동그라미를 marble이라고 한다. 
+<br>=> debounce는 operator 중 하나이다. 
 
 > ReactiveX는 Observer 패턴, Iterator 패턴, 그리고 functional 프로그래밍의 조합입니다. 
 
