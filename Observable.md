@@ -28,11 +28,11 @@ ReactiveX 에서는 observer가 Observable를 구독(subscribe)합니다.
 그러나 ReactiveX에서는 많은 명령이 병렬(parallel)로 실행될 수 있으며 그 결과는 나중에 "관찰자"에 의해 임의의 순서로 캡처됩니다. 
 메서드를 호출하는 대신 "관찰 가능한" 형식으로 데이터를 검색(retrieving)하고 변환(transforming)하는 메커니즘을 정의하고, 그 다음 관찰자가 이 메커니즘을 구독하는 그 순간, 이전에 정의된 메커니즘이 감시자(sentry)가 서있는 상태에서 작동합니다. 배출물들이 준비될 때마다 포착하고 대응합니다.
 
-이 접근 방식의 장점은 서로 의존(not dependant)하지 않는 여러 작업이 있는 경우 다음 작업을 시작하기 전에 각큼작업이 완료 될 때까지 기다리지 않고 모든 작업을 동시에(parallel) 시작할 수 있다는 것입니다. 
+이 접근 방식의 장점은 서로 의존(not dependant)하지 않는 여러 작업이 있는 경우 다음 작업을 시작하기 전에 이전 작업이 완료 될 때까지 기다리지 않아도 되서 모든 작업을 동시에(parallel) 시작할 수 있다는 것입니다. 
 이 방식으로 당신의 전체 태스크 번들은 번들에서 가장 긴 태스크만큼만 시간이 걸립니다. 
-(이 말은 즉슨 총 걸린 시간이 제일 오래 걸릴 태스크만큼이라는 것이다. 모두 동시에 작업이 진행되니깐)
+(이 말은 즉슨 총 걸린 시간이 제일 오래 걸린 태스크만큼이라는 것이다. 모두 동시에 작업이 진행되니깐)
 
-이 비동기 프로그래밍 및 디자인 모델을 설명하는 데 사용되는 많은 용어가 있습니다. 이 문서는 다음 용어를 사용합니다. observer는 Observable을 구독합니다. Observable은 observer의 메서드(onNext, onError, onCompleted)를 호출함으로써 항목을 방출(next)하거나 관찰자에게 알림(error, completed)을 보냅니다.
+이 비동기 프로그래밍 및 디자인 모델을 설명하는데 사용되는 많은 용어가 있습니다. 이 문서는 다음 용어를 사용합니다. observer는 Observable을 구독(subscribe)합니다. Observable은 observer의 메서드(onNext, onError, onCompleted)를 호출함으로써 항목을 방출(emit)하거나 관찰자에게 알림(notification: error, completed)을 보냅니다.
 
 다른 문서 및 기타 컨텍스트에서 "observer"라고 부르는 것을 "subscriber", "watcher" 또는 "reactor"라고도 합니다. 이 모델은 일반적으로 "reactor pattern" 이라고도 합니다.즉 Observer가 Reactor다.
 
