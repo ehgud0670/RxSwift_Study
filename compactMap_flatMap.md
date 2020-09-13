@@ -24,7 +24,7 @@ let mapped = scoreByName.map { $0.value }
 
 let flatMapped = scoreByName.flatMap { $0.value }
 // [0, 1, 2, 3, 4, 5]
-```
+``
 
 사실 `s.flatMap(transfrom)` 은 `Array(s.map(transform).joined())`와 같습니다.
 
